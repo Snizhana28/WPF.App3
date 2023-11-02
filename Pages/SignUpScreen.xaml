@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="WPF.App3.Pages.SignUpScreen"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF.App3.Pages"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+              FontFamily="Poppins">
+    <UserControl.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#FFCECB" Offset="0"/>
+            <GradientStop Color="#F8F8F8" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="170"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Source="/Assets/joinup.png" Grid.Row="0" Stretch="Uniform" HorizontalAlignment="Left" Margin="20 0"/>
+        <Image Source="/Assets/image1.png" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Stretch="Uniform" Margin="20 0 20 20"/>
+        <TextBlock Text="Sign up" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontWeight="DemiBold" FontSize="50" Margin="20"></TextBlock>
+        <TextBox x:Name="tbLogin" Grid.Column="0" Grid.Row="2" Height="50" Margin="55 10"  
+                 materialDesign:HintAssist.Hint="Login" 
+                 Style="{DynamicResource MaterialDesignOutlinedTextBox}"/>
+        <PasswordBox x:Name="tbPassword" Grid.Column="0" Grid.Row="3" Margin="55 10" Height="50"
+                 materialDesign:HintAssist.Hint="Password"
+                 Style="{StaticResource MaterialDesignOutlinedRevealPasswordBox}"/>
+        <Button Grid.Column="0" Grid.Row="4" Content="Login" Click="Button_Click_login" Background="#FA7436" BorderBrush="#FA7436"  
+            Width="200" Height="35" FontSize="18" Foreground="White" VerticalAlignment="Top" Margin="55 20"
+            materialDesign:ButtonAssist.CornerRadius="5"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            Style="{StaticResource MaterialDesignRaisedButton}"/>
+        <Button Grid.Row="0" Grid.Column="1" Content="Back" Background="#FA7436" BorderBrush="#FA7436"  Width="80" Height="30" FontSize="13" Foreground="White"
+            HorizontalAlignment="Right" Margin="20 0 20 0"
+            materialDesign:ButtonAssist.CornerRadius="5"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+            Style="{StaticResource MaterialDesignRaisedButton}" Click="Button_Click"/>
+    </Grid>
+</UserControl>

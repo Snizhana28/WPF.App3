@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\animation.gif" />
+    <None Remove="Assets\animationError.json" />
+    <None Remove="Assets\animation_404.mp4" />
+    <None Remove="Assets\animError1.mp4" />
+    <None Remove="Assets\image.png" />
+    <None Remove="Assets\image1.png" />
+    <None Remove="Assets\joinup.png" />
+    <None Remove="Assets\LogoJoinUp.png" />
+    <None Remove="Assets\Nature1.png" />
+    <None Remove="Assets\Tourists.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.1.4" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.9.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\animation_404.mp4" />
+    <Resource Include="Assets\animError1.mp4">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Assets\image1.png" />
+    <Resource Include="Assets\joinup.png" />
+    <Resource Include="Assets\Nature1.png" />
+    <Resource Include="Assets\Tourists.png" />
+  </ItemGroup>
+
+</Project>
